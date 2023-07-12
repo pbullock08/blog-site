@@ -4,20 +4,26 @@ const { Post, User } = require('../../models');
 // /api/posts endpoint 
 
 // GET Posts
-router.get('/', async (req, res) => {
-  try {
-    const postData = await Post.findAll({
-      include: { 
-        model: User,
-        attributes: ['username'],
-      },
-    });
-    res.status(200).json(postData);
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
-  }
-});
+// router.get('/', async (req, res) => {
+//   try {
+//     const postData = await Post.findAll({
+//       include: { 
+//         model: User,
+//         attributes: ['username'],
+//       },
+//     });
+//     const posts = postData.map((post) => 
+//       post.get({ plain:true })
+//     );
+//     res.render('homepage', {
+//       posts,
+//     });
+//     res.status(200).json(postData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//     console.log(err);
+//   }
+// });
 
 // router.post('/', async (req, res) => {
 //     try {
