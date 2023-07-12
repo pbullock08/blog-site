@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        Posted by {{post.user.username}} on {{post.date_created}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.content}}</p>
+    </div>
+</div>
+
+{{#each post.comments as |comment| }}
+<div class="card">
+    <div class="card-header"></div>
+    <div class="card-body">
+        <p class="card-text">{{content}}</p>
+        <h7> - {{user.username}}, {{date_created}}</h7>
+    </div>
+</div>
+{{/each}}
+
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Comment</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Leave your comment here.">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

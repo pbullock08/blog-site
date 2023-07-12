@@ -41,5 +41,32 @@ router.get('/signup', async (req, res) => {
     }
 });
 
+// render dashboard
+router.get('/dashboard', async (req, res) => {
+    try {
+        res.render('dashboard');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// render form to create new post
+router.get('/create', async (req, res) => {
+    try {
+        res.render('create-post');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// render form to edit post
+router.get('/edit', async (req, res) => {
+    try {
+        res.render('edit-post');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 module.exports = router;

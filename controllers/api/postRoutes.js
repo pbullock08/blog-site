@@ -23,9 +23,9 @@ router.get('/:id', async (req, res) => {
         },
       ]
     });
-    // const post = postData.get({ plain: true });
-    // res.render('blogpost', { post });
-    res.status(200).json(postData);
+    const post = postData.get({ plain: true });
+    res.render('blogpost', { post });
+    // res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
