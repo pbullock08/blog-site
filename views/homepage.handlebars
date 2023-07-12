@@ -1,7 +1,13 @@
 {{#each posts as |post|}}
-<section>
-    <h3>{{title}}</h3>
-    <h5>Posted by {{user.username}} on {{date_created}}</h5>
-    <p>{{content}}</p>
-</section>
+<div class="card">
+    <div class="card-header">
+        Posted by {{user.username}} on {{date_created}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="">{{title}}</a>
+        </h5>
+        <p class="card-text">{{content}}</p>
+    </div>
+</div>
 {{/each}}

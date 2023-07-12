@@ -19,8 +19,27 @@ router.get('/', async (req, res) => {
         // res.status(200).json(postData);
     } catch (err) {
         res.status(500).json(err);
-        console.log(err);
+        // console.log(err);
     }
-})
+});
+
+// render login page
+router.get('/login', async (req, res) => {
+    try {
+        res.render('login');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// render sign up page
+router.get('/signup', async (req, res) => {
+    try {
+        res.render('signup');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 module.exports = router;
