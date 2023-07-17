@@ -13,15 +13,18 @@
 <body>
     <header>
         <nav>
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="/" role="tab" aria-controls="home"
+                        aria-selected="true">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                    <a class="nav-link" id="dashboard-tab" data-toggle="tab" href="/dashboard" role="tab"
+                        aria-controls="dashboard" aria-selected="false">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" id="login-tab" data-toggle="tab" href="/login" role="tab" aria-controls="login"
+                        aria-selected="false">Login</a>
                 </li>
             </ul>
         </nav>
@@ -29,7 +32,9 @@
     </header>
     <main>
         {{{ body }}}
+        <script src="./js/index.js"></script>
     </main>
+
 </body>
 
 </html>

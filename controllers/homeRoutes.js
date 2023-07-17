@@ -26,9 +26,13 @@ router.get('/', async (req, res) => {
 // render login page
 router.get('/login', async (req, res) => {
     try {
+        if (req.session.logged_in) {
+            res.redirect('/');
+            return;
+        }
         res.render('login');
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json(err)
     }
 });
 
@@ -63,6 +67,17 @@ router.get('/create', async (req, res) => {
 router.get('/edit', async (req, res) => {
     try {
         res.render('edit-post');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// allows users to logout 
+router.post('/logout', async (req, res) => {
+    try {
+        req.session.destroy(() => {
+            res.redirect("/login");
+        });
     } catch (err) {
         res.status(500).json(err);
     }
